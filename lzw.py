@@ -192,7 +192,6 @@ def main():
         try:
             # comp = pickle.load(open(sys.argv[1], 'rb'))
             comp_str_list = open(inputFileName, 'rb').read().split()
-            print(comp_str_list)
 
             comp_int_lst = []
             for num in comp_str_list:
