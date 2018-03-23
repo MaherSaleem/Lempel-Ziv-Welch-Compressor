@@ -157,10 +157,18 @@ def printSummary(file1, file2):
 
 
 def main():
-    # Makes sure the user has provided the correct number of arguments.
-    inputFileName = 'in.txt'
-    outputFileName = 'out.lzw'
-    operation = 'compress'
+    opComporess = 0
+
+    if opComporess == 0:
+        operation = 'decompress'
+        inputFileName = 'lzv.txt'
+        outputFileName = 'text.txt'
+    elif opComporess == 1:
+        operation = 'compress'
+        inputFileName = 'text.txt'
+        outputFileName = 'lzv.txt'
+    else:
+        sys.exit('INVALID OPERATION')
     if operation == 'compress':
         # Call compress() on the given file.
         try:
@@ -180,9 +188,11 @@ def main():
             printError(0)
     elif operation == 'decompress':
         # Call decompress() on the given file.
+
         try:
             # comp = pickle.load(open(sys.argv[1], 'rb'))
             comp_str_list = open(inputFileName, 'rb').read().split()
+            print(comp_str_list)
 
             comp_int_lst = []
             for num in comp_str_list:
